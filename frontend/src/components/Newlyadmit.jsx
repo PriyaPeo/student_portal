@@ -32,33 +32,45 @@ export default function Newlyadmit() {
     }).catch(error => console.log)
   }
   
-  // const columns = [
-  //   {
-  //     title: 'Semester',
-  //     dataIndex: 'semester',
-  //     key: 'semester',
-  //   },
-  //   {
-  //     title: 'Total Fee Without Waive',
-  //     dataIndex: 'totalfee',
-  //     key: 'totalfee',
-  //   },
-  //   {
-  //     title: 'Waive (%)',
-  //     dataIndex: 'waive',
-  //     key: 'waive',
-  //   },
-  //   {
-  //     title: 'Total Fee After Waive',
-  //     dataIndex: 'afterwaivefee',
-  //     key: 'afterwaivefee',
-  //   },{
-  //     title: 'Total Deu',
-  //     dataIndex: 'deu',
-  //     key: 'deu',
-  //   },
-  // ];
-  
+const depinfo = [
+  {
+    Department: 'SWE',
+    Credit: 175,
+    Per_Credit_Cost: 5000,
+    key: '1'
+  },
+  {
+    Department: 'CSE',
+    Credit: 190,
+    Per_Credit_Cost: 5000,
+    key: '2'
+  },
+  {
+    Department: 'EEE',
+    Credit: 200,
+    Per_Credit_Cost: 5000,
+    key: '3'
+  }
+]
+
+const columns = [
+  {
+    title: 'Department',
+    dataIndex:'Department',
+    key:'key'
+  },
+  {
+    title: 'Credit',
+    dataIndex:'Credit',
+    key:'key'
+  },
+  {
+    title: 'Per_Credit_Cost',
+    dataIndex:'Per_Credit_Cost',
+    key:'key'
+  }
+]
+
   return (
     <Card style={{ margin: "40px" }}>
       <Row justify='end'>
@@ -77,14 +89,12 @@ export default function Newlyadmit() {
       </Row>
       <Row justify='left'>
          <h3>Your payable amount is :</h3>
-        </Row>
-    
-        
-<Row justify='center'>
-  {/* <Title >Summary</Title> */}
-</Row>
-      {/* <Table dataSource={dataSource} columns={columns} />; */}
-
+      </Row>
+      <Row justify='center'>
+        <Title>Department Information</Title>
+      </Row>
+        <Table dataSource={depinfo}
+          columns={columns}></Table>
     </Card>
   )
 }
