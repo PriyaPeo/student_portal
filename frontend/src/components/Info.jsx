@@ -36,6 +36,7 @@ export default function Info() {
   }
 
   const GPA = [5.00, 4.75, 4.50, 4.25, 4.00, 3.75, 3.50, 3.25, 3.00,2.75,2.50]
+  const Dep = ['SWE', 'CSE', 'EEE']
 
   return (
     <Card style={{ margin: "40px" }}>
@@ -65,8 +66,12 @@ export default function Info() {
           <Col xs={24} >
             <Form.Item label='Department'
               name='department'>
-              <Input>
-              </Input>
+              <Select placeholder='Select Department'>
+                {Dep.map ((Dep,index)=> {
+                  return <Select.Option key={Dep} values={Dep}>
+                  </Select.Option>
+                })}
+              </Select>
             </Form.Item>
           </Col>
           <Col xs={24} >
