@@ -1,5 +1,5 @@
 
-import { Card, Col, Form, Input, Row, Typography,Button } from 'antd'
+import { Card, Col, Form, Input, Row, Typography,Button, Select } from 'antd'
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { useEffect } from 'react';
@@ -34,6 +34,8 @@ export default function Info() {
       navigate('/Newlyadmit')
     }).catch(error => console.log)
   }
+
+  const GPA = [5.00, 4.75, 4.50, 4.25, 4.00, 3.75, 3.50, 3.25, 3.00,2.75,2.50]
 
   return (
     <Card style={{ margin: "40px" }}>
@@ -70,15 +72,23 @@ export default function Info() {
           <Col xs={24} >
             <Form.Item label='SSC Point'
               name='sscpoint'>
-              <Input>
-              </Input>
+              <Select placeholder='Select GPA'>
+                {GPA.map ((GPA,index)=> {
+                  return <Select.Option key={GPA} values={GPA}>
+                  </Select.Option>
+                })}
+              </Select>
             </Form.Item>
           </Col>
           <Col xs={24} >
             <Form.Item label='HSC Point'
               name='hscpoint'>
-              <Input>
-              </Input>
+              <Select placeholder='Select GPA'>
+                {GPA.map ((GPA,index)=> {
+                  return <Select.Option key={GPA} values={GPA}>
+                  </Select.Option>
+                })}
+              </Select>
             </Form.Item>
           </Col>
         </Row>

@@ -5,6 +5,7 @@ import Register from './components/Register';
 import Info from './components/Info';
 import Home from './components/Home';
 import Newlyadmit from './components/Newlyadmit';
+import Congo from './components/Congo';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/home" element={<Home/>} />
         <Route path="/account" element={<Info />} />
         <Route path="/newlyadmit" element={<Newlyadmit/>} />
+        <Route path="/congo" element={<Congo />} />
       </Routes>
      
    

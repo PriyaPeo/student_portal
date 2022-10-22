@@ -1,4 +1,4 @@
-import { Card, Col, Form, Input, Row, Typography,Button, Table } from 'antd'
+import { Card, Col, Form, Input, Row, Typography,Button, Table, Select } from 'antd'
 import FormItem from 'antd/es/form/FormItem'
 import Title from 'antd/lib/skeleton/Title'
 import axios from 'axios';
@@ -65,6 +65,10 @@ export default function Home() {
       key: 'due',
     },
   ];
+
+  const CGPA = [4.00, 3.75, 3.50, 3.25, 3.00,2.75,2.50]
+  const Sem = [2,3,4,5,6,7,8,9,10,11,12]
+
   
   return (
     <Card style={{ margin: "40px" }}>
@@ -75,15 +79,12 @@ export default function Home() {
        }}>Log Out</Button>
       </Row>
       <Row justify='center'>
-        <Title>Home</Title>
+        <Title>Transaction History</Title>
       </Row>
-      <Row justify='center'>
+      {/* <Row justify='center'>
         <Title>Information About Site</Title>
-      </Row>
-      <Row justify='left'>
-          to change
-        </Row>
-    
+      </Row> */}
+      
         <Form onFinish={checkinfo}
         labelCol={{ span: 7 }}
         wrapperCol={{ span: 12 }}
@@ -93,8 +94,25 @@ export default function Home() {
           <Col xs={24} >
             <Form.Item label='Please Enter CGPA'
               name='phonenumber'>
-              <Input>
-              </Input>
+              <Select placeholder='Select CGPA'>
+                {CGPA.map ((CGPA,index)=> {
+                  return <Select.Option key={CGPA} values={CGPA}>
+                  </Select.Option>
+                })}
+              </Select>
+            </Form.Item>
+          </Col>
+        </Row>
+        <Row justify='center'>
+          <Col xs={24} >
+            <Form.Item label='Please Enter Semester'
+              name='phonenumber'>
+              <Select placeholder='Select Semester'>
+                {Sem.map ((Sem,index)=> {
+                  return <Select.Option key={Sem} values={Sem}>
+                  </Select.Option>
+                })}
+              </Select>
             </Form.Item>
           </Col>
         </Row>
