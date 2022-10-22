@@ -76,9 +76,7 @@ export default function Newlyadmit() {
         <Title>Information About This Semester</Title>
       </Row>
       <Row justify='left'>
-          dkjhfkaushfkashdfasdaslhdfksadhfsah
-          sdghfgasdfasgdfshadkfgjasdhhfhasdfhsa
-          sdahdhjgsadgjhsagdjfgasdfgahsjdhgfhsjad
+          add table
         </Row>
     
         

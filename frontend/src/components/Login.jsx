@@ -53,7 +53,13 @@ const nav=useNavigate();
         </Row>
         <Row justify='center'>
           <Button htmlType='submit'>
-            Submit
+            Login
+          </Button>
+          <pre>  or  </pre>
+          <Button htmlType='submit' onClick={() => {
+            nav('/')
+          }}>
+            Register
           </Button>
         </Row>
       </Form>

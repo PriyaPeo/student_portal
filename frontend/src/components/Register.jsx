@@ -66,6 +66,12 @@ const navigate =   useNavigate()
           <Button htmlType='submit'>
             Register
           </Button>
+          <pre>  or  </pre>
+          <Button htmlType='submit' onClick={() => {
+            navigate('/login')
+          }}>
+            Login
+          </Button>
         </Row>
       </Form>
     </Card>
